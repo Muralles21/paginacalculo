@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Bienvenida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: center; /* Añadido para el posicionamiento relativo */
+        }
+
+        /* Reglas CSS para la marca de agua */
+        .container::before {
+            content: "";
+            background-image: url('marcadeagua.jpg'); /* Ruta de tu imagen de marca de agua */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9; /* Opacidad del 50% */
+            z-index: -1;
+            background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #495057;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>Universidad Mariano Gálvez de Guatemala</h4>
+        <h4>Centro Universitario Portales</h4>
+        <h4>Ingenieria en Sistemas</h4>
+        <h4>Calculo 1, Seccion "A"</h4>
+        <h4>Ing. Juan Francisco Culajay Gaitan</h4>
+        <h1>Tema: LIMITES</h1>
+        <h4>Elvin Eduardo Muralles Melgar</h4>
+        <h4>9989-22-5053</h4>
+        <h1>Bienvenidos</h1>
+        <div class="btn-container">
+            <button class="btn btn-primary" onclick="abrirVentana('ventanas/Informacion.html')">Definición</button>
+            <button class="btn btn-secondary" onclick="abrirVentana('ventanas/Video.html')">Video</button>
+            <button class="btn btn-success" onclick="abrirVentana('ventanas/bibliografias.html')">Bibliografías</button>
+        </div>
+    </div>
+
+    <script>
+        function abrirVentana(url) {
+            window.open(url, "_blank", "width=600,height=400");
+        }
+    </script>
+</body>
+</html>
